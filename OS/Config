@@ -1,0 +1,6 @@
+#!/bin/sh
+#配置环境变量
+
+PRE_WAREHOUSE_PATH="/cygdrive/e/PreWarehouse"
+WAREHOUSE_PATH="/cygdrive/e/Warehouse"
+WAREHOUSE_VERSION_FILE="$WAREHOUSE_PATH/Version"

@@ -1,0 +1,1 @@
+﻿该目录放置一些与Unix系统交互的脚本，如Shell等。注：Windows下请安装Cygwin
