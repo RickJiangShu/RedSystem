@@ -1,0 +1,24 @@
+﻿Documents	文档/规范
+
+Assets/
+	Plugins/		插件
+		Warehouser/
+		ConfigManager/
+	RedLibrary/		框架相关库
+	Scripts/
+		Core		核心代码
+		Module		模块代码
+		Shell		外壳代码
+	Warehouse/		资源仓库（与美术）
+		UI/
+			MainUI.prefab 主UI
+			Panels/	面板Prefab
+			Atlas/	图集
+
+PreWarehouse/
+	UI/
+		Common/		通用图片
+		MainUI/		主UI图片
+		Panel/		相关面板图片
+		Icon/		相关图标图片
+		
