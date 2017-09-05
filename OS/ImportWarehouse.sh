@@ -21,9 +21,9 @@ function ImportAll()
 
 if [ -f $WAREHOUSE_VERSION_FILE ]
 then
-	preVersion='svn info $PRE_WAREHOUSE_PATH |grep Revision: |cut -c11-'
+	preVersion=`svn info $PRE_WAREHOUSE_PATH |grep Revision: |cut -c11-`
 	version=`cat $WAREHOUSE_VERSION_FILE`
-	if [ preVersion == version ]
+	if [ "$preVersion" == "$version" ]
 	then
 		echo "版本相同，不进行导入..."
 	else
