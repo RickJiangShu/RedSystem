@@ -1,4 +1,9 @@
-﻿Documents	文档/规范
+﻿定义：
+映射目录：直接从PreWarehouse一一映射过来的文件夹。
+自动目录：由工具自动生成的目录，人工无权限修改。
+手动目录：由人工手动去
+
+Documents	文档/规范
 
 Assets/
 	Plugins/		插件
@@ -14,7 +19,7 @@ Assets/
 			MainUI.prefab	主UI
 			Panel/	面板Prefab
 			Atlas/	图集
-		UITexture/	结构同PreWarehouse/UITextures/相同
+		UITexture/	UI图片（映射目录）
 
 PreWarehouse/
 	UITexture/		UI图片

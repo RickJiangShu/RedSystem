@@ -21,13 +21,14 @@ function ImportAll()
 
 if [ -f $WAREHOUSE_VERSION_FILE ]
 then
-	preVersion=`svn info $PRE_WAREHOUSE_PATH |grep Revision: |cut -c11-`
-	version=`cat $WAREHOUSE_VERSION_FILE`
-	if [ "$preVersion" == "$version" ]
+	remoteVersion=`svn info $PRE_WAREHOUSE_PATH |grep Revision: |cut -c11-`
+	localVersion=`cat $WAREHOUSE_VERSION_FILE`
+	if [ "$localVersion" == "$remoteVersion" ]
 	then
 		echo "版本相同，不进行导入..."
 	else
-		echo "差异导入$version"
+		diffInfo=`svn diff $PRE_WAREHOUSE_PATH --summarize -r $localVersion`
+		echo "$diffInfo"
 	fi
 else
 	#全部导入
