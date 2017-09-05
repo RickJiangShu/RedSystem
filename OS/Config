@@ -2,5 +2,5 @@
 #配置环境变量
 
 PRE_WAREHOUSE_PATH="/cygdrive/e/PreWarehouse"
-WAREHOUSE_PATH="/cygdrive/e/Warehouse"
+WAREHOUSE_PATH="/cygdrive/e/TestProjects/Moba/Assets/Warehouse"
 WAREHOUSE_VERSION_FILE="$WAREHOUSE_PATH/Version"
