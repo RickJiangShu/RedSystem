@@ -3,9 +3,37 @@
 
 source ./CheckConfig.sh
 
+#用于按换行符切割字符串并返回一个数组
+function SetIFS()
+{
+	LAST_IFS="$IFS"
+	IFS=$'\x0A'
+}
+function RevertIFS()
+{
+	IFS="$LAST_IFS"
+}
+
 function ImportAll()
 {
 	echo "ImportAll"
+	#导入UI图片
+	UITextureSource="$PRE_WAREHOUSE_PATH/UITexture"
+	UITextureDestination="$WAREHOUSE_PATH/UITexture"
+	cp -ru $UITextureSource/* $UITextureDestination
+
+	#检查Source是否已经没有Destination的相关文件
+	onlyStr="Only in $UITextureDestination"
+	diffStr=`diff -r $UITextureSource $UITextureDestination`
+
+	SetIFS
+	diffArr=($diffStr)
+	for s in ${diffArr[@]}
+	do
+		echo "$s"
+	done
+	RevertIFS
+
 	return 0
 }
 
@@ -21,7 +49,7 @@ else
 			ImportAll
 			;;
 		[nN][oO]|[nN])
-			echo "No"
+			echo "Exit..."
 			;;
 		*)
 			echo "Invalid input..."

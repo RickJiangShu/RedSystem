@@ -11,12 +11,13 @@ Assets/
 		Shell		外壳代码
 	Warehouse/		资源仓库（与美术）
 		UI/
-			MainUI.prefab 主UI
-			Panels/	面板Prefab
+			MainUI.prefab	主UI
+			Panel/	面板Prefab
 			Atlas/	图集
+		UITexture/	结构同PreWarehouse/UITextures/相同
 
 PreWarehouse/
-	UI/
+	UITexture/		UI图片
 		Common/		通用图片
 		MainUI/		主UI图片
 		Panel/		相关面板图片
