@@ -16,7 +16,6 @@ function RevertIFS()
 
 function ImportAll()
 {
-	echo "ImportAll"
 	#导入UI图片
 	UITextureSource="$PRE_WAREHOUSE_PATH/UITexture"
 	UITextureDestination="$WAREHOUSE_PATH/UITexture"
@@ -24,13 +23,22 @@ function ImportAll()
 
 	#检查Source是否已经没有Destination的相关文件
 	onlyStr="Only in $UITextureDestination"
+	onlyLength=${#onlyStr}
 	diffStr=`diff -r $UITextureSource $UITextureDestination`
 
 	SetIFS
 	diffArr=($diffStr)
 	for s in ${diffArr[@]}
 	do
-		echo "$s"
+		#忽略.meta文件
+		[[ $s =~ ".meta" ]] && continue
+
+		checkOnlyStr=${s:0:$onlyLength}
+		if [ "$checkOnlyStr" == "$onlyStr" ]; then
+			onlyFilePath=${s:8}
+			onlyFilePath=${onlyFilePath/: //}
+			rm $onlyFilePath
+		fi
 	done
 	RevertIFS
 
