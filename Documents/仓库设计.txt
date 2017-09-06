@@ -1,8 +1,18 @@
 ﻿将项目中的SVN仓库与美术和策划日常使用的SVN仓库分开来。
 
 这样做有以下好处：
-1、保证项目不会出现冗余数据；
-2、避免meta文件的冲突；
-3、由工具统一设置Importer。
+1. 保证项目不会出现冗余数据；
+2. 避免meta文件的冲突；
+3. 由工具统一设置Importer。
+4. 工程中的资源大部分都是自动处理的，仅仅有一小部分需要手动处理（因为并不是所有资源都能自动处理，比如UI）。
 
-因此，分别将这两个仓库命名为“Warehouse”和“PreWarehouse”。
+因此，我分别定义两个仓库与一个加工机：
+1. Warehouse 工程仓库（SVN）
+2. PreWarehouse 规范仓库（SVN）
+3. Processor 加工机（Client）
+
+流程：
+1. 美术按照规范将资源导入并上传到PreWarehouse；
+2. Processor 更新并将相关资源导入到Warehouse本地仓库；
+3. Processor 进行加工（如生成meta文件，生成prefab，设置贴图类型等），加工完成后将Warehouse上传；
+4. 各个客户端更新Warehouse。
