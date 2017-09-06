@@ -16,16 +16,26 @@ Assets/
 		Module		模块代码
 		Shell		外壳代码
 	Warehouse/		资源仓库（与美术）
-		UI/
+		Conifg/		配置文件
+		Atlas/		图集
+		UI/		（手动）
 			MainUI.prefab	主UI
 			Panel/	面板Prefab
-			Atlas/	图集
-		UITexture/	UI图片（映射目录）
+		UITexture/	UI图片
+		
 
 PreWarehouse/
+	Config/			配置文件
 	UITexture/		UI图片
 		Common/		通用图片
 		MainUI/		主UI图片
 		Panel/		相关面板图片
 		Icon/		相关图标图片
+	Model/			模型文件
+	Effect/			特效
+	Map/			地图
+	Sound/			音效
+	Sprite/			2D游戏精灵
+	
+	
 		

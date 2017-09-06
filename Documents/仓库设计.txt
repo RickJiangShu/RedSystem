@@ -7,12 +7,14 @@
 4. 工程中的资源大部分都是自动处理的，仅仅有一小部分需要手动处理（因为并不是所有资源都能自动处理，比如UI）。
 
 因此，我分别定义两个仓库与一个加工机：
-1. Warehouse 工程仓库（SVN）
-2. PreWarehouse 规范仓库（SVN）
-3. Processor 加工机（Client）
+1. PreWarehouse 规范仓库（SVN）
+2. Processor 加工机（Client）
+3. Warehouse 工程仓库（SVN）
 
 流程：
 1. 美术按照规范将资源导入并上传到PreWarehouse；
-2. Processor 更新并将相关资源导入到Warehouse本地仓库；
+2. Processor 自动更新并将相关资源导入到Warehouse本地仓库；
 3. Processor 进行加工（如生成meta文件，生成prefab，设置贴图类型等），加工完成后将Warehouse上传；
 4. 各个客户端更新Warehouse。
+
+由此，需要一个Ubuntu系统的Repository机，因为Processor是一个基于引擎的客户端，所以需要一个可以运行Unity的Linux系统，因此选择Ubuntu。

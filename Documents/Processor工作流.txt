@@ -1,0 +1,2 @@
+1、将PreWarehouse下需要同步的资源到Warehouse；
+2、刷新.meta文件；

@@ -1,0 +1,8 @@
+SVN仓库搭建
+1. 创建“PreWarehouse”仓库；
+2. 创建“Warehouse”仓库。
+
+Processor搭建
+系统配置：Ubuntu 或 Windows
+1. 新建一个“Processor”Unity工程；
+2. 在Assets下clone RedFramework。
